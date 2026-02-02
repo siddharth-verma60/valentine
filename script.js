@@ -17,15 +17,13 @@ function moveNoButton() {
   noBtn.style.top = `${y}px`;
 }
 
-// Desktop
-noBtn.addEventListener("mouseover", moveNoButton);
-
-// Mobile
 noBtn.addEventListener("touchstart", (e) => {
   e.preventDefault();
   moveNoButton();
 });
 
+noBtn.addEventListener("mouseover", moveNoButton);
+
 yesBtn.addEventListener("click", () => {
-  response.innerHTML = "YAYYY!! 💕🥰<br>Happy Valentine’s Day, my love 💐";
+  response.innerHTML = "YAYYY!! 💕🥰<br>I love you. Happy Valentine’s Day 💐";
 });
