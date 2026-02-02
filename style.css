@@ -1,59 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  height: 100vh;
-  background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ffd6e8, #fff0f6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Comic Sans MS", "Poppins", cursive;
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  padding: 16px;
 }
 
 .card {
   background: white;
-  padding: 40px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 24px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 h1 {
   color: #ff4d88;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
 }
 
 .note {
-  margin: 20px 0;
-  font-size: 16px;
-  color: #444;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
-.buttons {
+.button-area {
   position: relative;
-  height: 60px;
+  height: 90px;
 }
 
 button {
-  padding: 12px 22px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 30px;
-  font-size: 16px;
+  border-radius: 999px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 #yesBtn {
   background: #ff4d88;
   color: white;
+  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.4);
+}
+
+#yesBtn:active {
+  transform: scale(0.95);
 }
 
 #noBtn {
-  background: #ddd;
+  background: #f1f1f1;
+  color: #333;
   position: absolute;
-  left: 200px;
+  left: 55%;
   top: 0;
 }
 
 .response {
-  margin-top: 25px;
-  font-size: 18px;
+  margin-top: 24px;
+  font-size: 1.2rem;
   color: #ff4d88;
-  font-weight: bold;
+  font-weight: 600;
 }

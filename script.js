@@ -1,19 +1,31 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const response = document.getElementById("response");
+const area = document.querySelector(".button-area");
 
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 250;
-  const y = Math.random() * 40;
+function moveNoButton() {
+  const areaRect = area.getBoundingClientRect();
+  const btnRect = noBtn.getBoundingClientRect();
+
+  const maxX = areaRect.width - btnRect.width;
+  const maxY = areaRect.height - btnRect.height;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
-});
+}
 
-noBtn.addEventListener("click", () => {
-  noBtn.style.left = `${Math.random() * 250}px`;
+// Desktop
+noBtn.addEventListener("mouseover", moveNoButton);
+
+// Mobile
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  moveNoButton();
 });
 
 yesBtn.addEventListener("click", () => {
-  response.innerHTML = "YAYYY!! 💕🥰 I knew it. Happy Valentine’s Day! 💐";
+  response.innerHTML = "YAYYY!! 💕🥰<br>Happy Valentine’s Day, my love 💐";
 });
