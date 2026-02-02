@@ -1,0 +1,59 @@
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Comic Sans MS", "Poppins", cursive;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+h1 {
+  color: #ff4d88;
+}
+
+.note {
+  margin: 20px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.buttons {
+  position: relative;
+  height: 60px;
+}
+
+button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d88;
+  color: white;
+}
+
+#noBtn {
+  background: #ddd;
+  position: absolute;
+  left: 200px;
+  top: 0;
+}
+
+.response {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #ff4d88;
+  font-weight: bold;
+}
