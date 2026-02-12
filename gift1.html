@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift 1 - Romantic Quiz 💕</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .quiz-container {
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quiz-options button {
+      width: 100%;
+      padding: 16px;
+      border-radius: 16px;
+      border: none;
+      font-size: 1rem;
+      background: #fff0f6;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .quiz-options button:active {
+      transform: scale(0.97);
+    }
+
+    #quizResponse {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #ff4d88;
+      min-height: 30px;
+    }
+
+    .progress {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    /* 💖 HEART CONFETTI */
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 20px;
+      animation: fall linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>How Well Do You Know Us? 💖</h1>
+
+    <div class="quiz-container">
+      <div class="progress" id="progress"></div>
+
+      <p class="quiz-question" id="question"></p>
+
+      <div class="quiz-options" id="options"></div>
+
+      <p id="quizResponse"></p>
+    </div>
+
+    <button class="back-btn" onclick="location.href='gifts.html'">⬅ Back</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What were you feeling about me on our first date?",
+        options: [
+          "I was secretly crushing on you",
+          "I was already head over heels for you",
+          "I was judging you big time for your coffee habits ☕️"
+        ],
+        correctIndex: 2
+      },
+      {
+        question: "When did I first realise I was falling for you?",
+        options: [
+          "After our buddhist temple date",
+          "Peak District",
+          "I'm still falling for you every day ❤️"
+        ],
+        correctIndex: 2
+      },
+      {
+        question: "What’s my favourite thing about you?",
+        options: [
+          "Your smile",
+          "Your kindness",
+          "Everything about you ❤️"
+        ],
+        correctIndex: 2
+      }
+    ];
+
+    let currentQuestion = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const responseEl = document.getElementById("quizResponse");
+    const progressEl = document.getElementById("progress");
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.innerText = q.question;
+      progressEl.innerText = `Question ${currentQuestion + 1} of ${quizData.length}`;
+      responseEl.innerText = "";
+      optionsEl.innerHTML = "";
+
+      q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        btn.onclick = () => handleAnswer(index);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selectedIndex) {
+      const correctIndex = quizData[currentQuestion].correctIndex;
+
+      if (selectedIndex === correctIndex) {
+        responseEl.innerText = "Correct 🥰 You know me so well!";
+
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion < quizData.length) {
+            loadQuestion();
+          } else {
+            showFinalMessage();
+          }
+        }, 1200);
+
+      } else {
+        responseEl.innerText = "Hehehe not quite 😏 Try again!";
+      }
+    }
+
+    function showFinalMessage() {
+      questionEl.innerText = "You passed the love test 💖";
+      optionsEl.innerHTML = "";
+      responseEl.innerHTML =
+        "You officially win unlimited hugs and kisses 😌💘";
+      progressEl.innerText = "";
+
+      launchHearts();
+    }
+
+    function launchHearts() {
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerText = "💖";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+        heart.style.fontSize = (16 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

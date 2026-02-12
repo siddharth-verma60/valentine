@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift 4 💖</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Cute font combo -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #fff5f8;
+      font-family: 'Baloo 2', cursive;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2rem;
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+
+    .gif {
+      width: 80%;
+      max-width: 320px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .message {
+      font-size: 1.3rem;
+      margin: 18px 0;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .highlight {
+      color: #ff4d88;
+      font-weight: 700;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      padding: 16px 32px;
+      border-radius: 999px;
+      border: none;
+      background: #ff4d88;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(255, 77, 136, 0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .back-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Soft fade-in */
+    .fade {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card fade">
+    <h1>Gift 4 ✨💖</h1>
+
+    <img src="kiss.gif" alt="Cute Kiss GIF" class="gif">
+
+    <div class="message">
+      To unlock this gift… 💌
+    </div>
+
+    <div class="message highlight">
+      You’ll need to kiss me first 💋
+    </div>
+
+    <div class="message">
+      A cute little surprise is waiting for you! 🎁
+    </div>
+
+    <div class="message">
+      (I promise it’s worth it 😘)
+    </div>
+
+    <button class="back-btn" onclick="location.href='gifts.html'">
+      ← Back
+    </button>
+  </div>
+
+</body>
+</html>

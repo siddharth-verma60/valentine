@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift 3 - Our Memories 📸</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Handwritten style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f8cdd7;
+    }
+
+    .memory-wall {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .polaroid {
+      background: #fdf7e3;
+      padding: 14px 14px 20px;
+      border-radius: 6px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .caption {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Slight random tilt effect */
+    .tilt-left {
+      transform: rotate(-3deg);
+    }
+
+    .tilt-right {
+      transform: rotate(3deg);
+    }
+
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      background: #ff3b30;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 999px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Our Moments 💖</h1>
+
+    <div class="memory-wall">
+
+      <div class="polaroid tilt-left">
+        <video class="memory-video" autoplay muted loop playsinline>
+            <source src="trouble.mp4" type="video/mp4">
+                our browser does not support the video tag.
+        </video>
+        <div class="caption">Peak District: 1, Her Patience: 0 😌💘</div>
+    </div>
+
+      <div class="polaroid tilt-right">
+        <img src="pink.jpg" alt="True Smile">
+        <div class="caption">She judged. I slayed. #nopink</div>
+      </div>
+
+      <div class="polaroid tilt-left">
+        <img src="gundi.jpg" alt="Perfect Day">
+        <div class="caption">Local gundi spotted</div>
+      </div>
+
+      <div class="polaroid tilt-right">
+        <video class="memory-video" autoplay muted loop playsinline>
+            <source src="chef.mp4" type="video/mp4">
+                our browser does not support the video tag.
+        </video>
+        <div class="caption">Gordon Ramsay would approve. I definitely did.</div>
+      </div>
+
+      <div class="polaroid tilt-left">
+        <img src="lap.jpg" alt="My Home">
+        <div class="caption">Carried her like the trophy she is 🏆</div>
+      </div>
+
+      <div class="polaroid tilt-right">
+        <img src="foreverus.jpg" alt="Forever Us">
+        <div class="caption">Always my favourite decision</div>
+      </div>
+
+    </div>
+
+    <button class="back-btn" onclick="location.href='gifts.html'">← Back</button>
+  </div>
+</body>
+</html>
