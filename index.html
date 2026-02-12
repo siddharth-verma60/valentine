@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💖 Valentine?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,5 +26,27 @@
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+  const assetsToPreload = [
+    "chef.mp4",
+    "foreverus.jpg",
+    "gundi.jpg",
+    "kiss.jpg",
+    "lap.jpg",
+    "pink.jpg",
+    "teddy.jpg",
+    "trouble.mp4"
+  ];
+
+  assetsToPreload.forEach(src => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = src.endsWith(".mp4") ? "video" : "image";
+    link.href = src;
+    document.head.appendChild(link);
+  });
+</script>
+
 </body>
 </html>
