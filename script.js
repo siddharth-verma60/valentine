@@ -25,5 +25,6 @@ noBtn.addEventListener("touchstart", (e) => {
 noBtn.addEventListener("mouseover", moveNoButton);
 
 yesBtn.addEventListener("click", () => {
-  response.innerHTML = "YAYYY!! 💕🥰<br>I love you. Happy Valentine’s Day 💐";
+  window.location.href = "valentines.html";
 });
+

@@ -78,3 +78,30 @@ button {
   font-weight: 600;
   color: #ff4d88;
 }
+
+/* Celebration Page */
+
+.celebration h1 {
+  font-size: clamp(2rem, 7vw, 2.6rem);
+}
+
+.teddy {
+  margin: 20px 0;
+}
+
+.teddy img {
+  width: 70%;
+  max-width: 250px;
+  border-radius: 20px;
+}
+
+.gift-btn {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  padding: 16px 30px;
+  border-radius: 999px;
+  border: none;
+  background: #ff4d88;
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 77, 136, 0.45);
+}
